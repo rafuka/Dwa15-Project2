@@ -22,10 +22,11 @@ Please check the comment that starts with *NOTE for TA's* on the *logic.php* fil
 ## Things that can be improved/fixed
 There is a small glitch when clicking the *Generate!* button that makes the main *div* shrink and grow back again.
 
-Instead of scraping the web every time a user goes to the site, it would be better to scrape once for a large word base and save the words in a file.
+Instead of scraping the web every time a user goes to the site, it would be better to scrape once for a large word base and save the words in a file for future use.
 
 ## Resources
-For styling: [Bootswatch Theme](https://bootswatch.com/paper/).
+For styling: [Bootswatch Theme](https://bootswatch.com/paper/)
+
 Words scraped from: http://www.paulnoll.com/Books/Clear-English/
 
 > Created By J. Rafael Garcia, e-mail: rafuk89@gmail.com
