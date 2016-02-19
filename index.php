@@ -5,6 +5,7 @@
   <title>Project 2 | J. Rafael Garcia</title>
   <meta charset="utf-8"/>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 
   <?php require 'logic.php'; ?>

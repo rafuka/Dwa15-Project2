@@ -27,10 +27,13 @@
 
     }
 
-
+    /* --- NOTE for TA's: when testing this code on a hardcoded array, it worked fine
+           however when I tested the project locally using the scraped array of words
+           there still were some words with apostrophes, If I can get some feedback
+           on why that might've happenned I'd appreciate it. Thanks. */ 
     $words[1] = preg_replace("/[^A-Za-z ]/", '', $words[1]);  # Remove or non-alphabetic characters
     $words[1] = array_filter($words[1]);                      # Filter any empty string (if any)
-
+    # ---
 
     $_SESSION['words'] = $words[1];
   }

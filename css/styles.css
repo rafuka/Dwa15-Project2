@@ -6,7 +6,7 @@ body {
 div#maincontainer {
   width: 100%;
   max-width: 600px;
-  margin: 20px auto;
+  margin: 50px auto;
   background-color: white;
   border-radius: 5px;
   padding: 20px;
@@ -19,6 +19,7 @@ h1 {
 }
 
 div#password {
+  font-family: 'Ubuntu Mono', sans-serif;
   text-align: center;
 }
 
