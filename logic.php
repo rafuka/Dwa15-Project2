@@ -5,6 +5,34 @@
 
   # For testing
   $words = array("hi", "there", "you", "brawl");
+
+  # Scrap for words
+  if (!isset($_SESSION['words'])) {
+    $url = 'http://www.paulnoll.com/Books/Clear-English/';
+    $curr_page = array('words-01-02-hundred.html', 'words-03-04-hundred.html', 'words-05-06-hundred.html',
+                       'words-07-08-hundred.html', 'words-09-10-hundred.html', 'words-11-12-hundred.html',
+                       'words-13-14-hundred.html', 'words-15-16-hundred.html', 'words-17-18-hundred.html',
+                       'words-19-20-hundred.html', 'words-21-22-hundred.html', 'words-23-24-hundred.html',
+                       'words-25-26-hundred.html', 'words-27-28-hundred.html', 'words-29-30-hundred.html');
+
+    $words_string = "";
+
+    foreach ($curr_page as $page) {
+      $words_string = $words_string . file_get_contents($url . $page);
+    }
+
+    preg_match_all("'<li>(.*?)</li>'si", $words_string, $words);
+
+    # Trim the words for unnecessary whitespace.
+    foreach ($words[1] as $key => $word) {
+      $words[1][$key] = trim($word);
+    }
+
+    $_SESSION['words'] = $words[1];
+  }
+
+  $words = $_SESSION['words'];
+
   $symbols = array("@", "#", "$", "%", "&", "!");
   $digits = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
   $separation = "";
@@ -12,8 +40,8 @@
   $pass = "";
 
   $wordcount = 3; # Number of words
-  $scount = 0;   # Number of special characters ($symbols)
-  $numcount = 0; # Number of digits
+  $scount = 0;    # Number of special characters ($symbols)
+  $numcount = 0;  # Number of digits
 
   if (isset($_GET['numwords']) AND  # Check that input is a number from 1 to 5
      ($_GET['numwords'] == 1 OR
@@ -56,10 +84,26 @@
     $separation = $_GET['separation'];
   }
 
-  # Build Password TODO: add separators
-  for($i = 0; $i < $wordcount; $i++) {
+  # Build Password
+  if ($separation == "c") {
+    for($i = 0; $i < $wordcount; $i++) {
+
+      $pass = $pass . ucwords($words[array_rand($words)]);
+
+    }
+  }
+  else {
+    for ($i = 0; $i < $wordcount - 1; $i++) {
+      $pass = $pass . $words[array_rand($words)] . $separation;
+    }
+
     $pass = $pass . $words[array_rand($words)];
   }
+
+
+
+  $pass = $pass . $words[array_rand($words)];
+
 
   for($i = 0; $i < $scount; $i++) {
     $pass = $pass . $symbols[array_rand($symbols)];

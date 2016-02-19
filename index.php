@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
 </head>
 <body>
   <h1>Password Generator</h1>
-  <pre><?php var_dump($words); ?></pre>
+
   <div id="password">
     <?php echo $pass; ?>
   </div>
@@ -49,11 +50,13 @@
     <select id="separation" name="separation" form="wordselect">
       <option value=""  <?php if($separation == "") { echo "selected";} ?>>None</option>
       <option value=" " <?php if($separation == " ") { echo "selected";} ?>>Space</option>
-      <option value="-" <?php if($separatin == "-") { echo "selected";} ?>>Hyphen</option>
+      <option value="-" <?php if($separation == "-") { echo "selected";} ?>>Hyphen</option>
       <option value="c" <?php if($separation == "c") { echo "selected";} ?>>CamelCase</option>
     </select>
     <br>
     <input type="submit" value="Generate!"/>
   </form>
+
+  <?php var_dump($words); ?>
 </body>
 </html>
