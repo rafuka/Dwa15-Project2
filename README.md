@@ -19,6 +19,11 @@ It was built from scratch on PHP.
 ## Info for TA's
 Please check the comment that starts with *NOTE for TA's* on the *logic.php* file.
 
+## Things that can be improved/fixed
+There is a small glitch when clicking the *Generate!* button that makes the main *div* shrink and grow back again.
+
+Instead of scraping the web every time a user goes to the site, it would be better to scrape once for a large word base and save the words in a file.
+
 ## Resources
 For styling: [Bootswatch Theme](https://bootswatch.com/paper/).
 Words scraped from: http://www.paulnoll.com/Books/Clear-English/
