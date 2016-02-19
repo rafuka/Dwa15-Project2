@@ -3,9 +3,6 @@
   # Array to hold all the possible words
   $words = [];
 
-  # For testing
-  $words = array("hi", "there", "you", "brawl");
-
   # Scrap for words
   if (!isset($_SESSION['words'])) {
     $url = 'http://www.paulnoll.com/Books/Clear-English/';
@@ -25,8 +22,15 @@
 
     # Trim the words for unnecessary whitespace.
     foreach ($words[1] as $key => $word) {
+
       $words[1][$key] = trim($word);
+
     }
+
+
+    $words[1] = preg_replace("/[^A-Za-z ]/", '', $words[1]);  # Remove or non-alphabetic characters
+    $words[1] = array_filter($words[1]);                      # Filter any empty string (if any)
+
 
     $_SESSION['words'] = $words[1];
   }
@@ -52,7 +56,8 @@
 
     $wordcount = $_GET['numwords'];
 
-}
+  }
+
   if (isset($_GET['specialchars']) AND # Check that input is a number from 0 to 5
      ($_GET['specialchars'] == 0 OR
       $_GET['specialchars'] == 1 OR
@@ -99,10 +104,6 @@
 
     $pass = $pass . $words[array_rand($words)];
   }
-
-
-
-  $pass = $pass . $words[array_rand($words)];
 
 
   for($i = 0; $i < $scount; $i++) {

@@ -1,0 +1,62 @@
+
+body {
+  background-color: #74CF72;
+}
+
+div#maincontainer {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.4);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+div#password {
+  text-align: center;
+}
+
+div#password p {
+  margin: 0;
+  font-size: 2em;
+  color: #5CC75C;
+  font-weight: bold;
+  background-color: #FFFCF0;
+}
+
+form#wordselect {
+  width: 270px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+select {
+  width: 30px;
+  font-size: 14px;
+  float: right;
+  background-color: #FFFCF0;
+  color: orange;
+  font-weight: bold;
+  border-radius: 5px;
+  padding-left: 3px;
+  box-shadow: 0px 0px 3px;
+}
+
+select#separation {
+  width: 90px;
+}
+
+label {
+  font-size: 1.2em;
+}
+
+
+#submitbtn {
+  margin-top: 20px;
+}
